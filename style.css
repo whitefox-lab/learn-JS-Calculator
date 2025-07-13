@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --fox-bright: #ff6900;
+    --orange: #ffbb00;
+    --dark-gray: #3d3d3d;
+    --fox-gray: #7e7e82;
+    --display: #0096ff;
+    --silver: #d0d3d4;
+    --jet-black: #1a1a1a;
+
+    --bg-color: #1e1e1e;
+    --text-main: white;
+    --text-alter: black;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body[data-theme="light"] {
+    --bg-color: white;
+    --text-main: black;
+    --text-alter: white;
+    
+    --calc-bg: #2b2b2b;
+    --button-bg: #444;
+    --button-text: #fdfdfd;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    transition: 1s;
+}
+
+.app {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+.background {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.circle1 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    opacity: 0.7;
+    translate: 10% 20%;
+    animation: rotate 25s linear infinite;
+    background: var(--display);
+    z-index: 4;
+}
+
+.circle2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    opacity: 0.7;
+    translate: -10% -20%;
+    animation: rotate 15s linear infinite reverse;
+    background: blue;
+    z-index: 6;
+}
+
+.circle3 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    opacity: 0.7;
+    translate: 10% -20%;
+    animation: rotate 30s linear infinite;
+    background: yellow;
+    z-index: 8;
+}
+
+.circle4 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    opacity: 0.7;
+    translate: -10% 20%;
+    animation: rotate 20s linear infinite;
+    background: var(--fox-bright);
+    z-index: 10;
+}
+
+.blur-overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(60px);
+    z-index: 15;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateX(40px);
+  }
+  to {
+    transform: rotate(360deg) translateX(40px);
+  }
+}
+
+.calculator-body {
+    min-height: 50vh;
+    width: min-content;
+    border: solid 4px;
+    border-color: var(--dark-gray);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--jet-black);
+    overflow: hidden;
+    z-index: 20;
+}
+
+.header {
+    padding: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-alter);
+    font-weight: 600;
+    background-color: var(--fox-bright);
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.app-logo {
+    padding-left: 4px;
+    transition: 1s;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.app-theme, .app-color, .app-settings {
+    background-color: var(--dark-gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    width: 26px;
+}
+
+.app-screen {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--display);
+    border: solid 2px;
+    border-color: var(--silver);
+    border-radius: 8px;
+    margin: 10px 8px 0 8px;
+    padding: 8px;
+    gap: 8px;
+    text-align: right;
+}
+
+.app-screen #pre-screen {
+    color: white;
+    font-family: "Handjet", sans-serif;
+    font-size: 40px;
+    pointer-events: none;
+    align-self: center;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.app-screen #main-screen {
+    color: white;
+    font-family: "Handjet", sans-serif;
+    font-weight: 250;
+    font-size: 60px;
+    text-rendering: auto;
+    outline: none;
+    border: none;
+    text-align: right;
+    background-color: transparent;
+    width: 100%;
+}
+
+.app-screen #small-screen {
+    color: white;
+    font-family: "Handjet", sans-serif;
+    font-size: 40px;
+    pointer-events: none;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.app-screen input::placeholder {
+    color: white;
+}
+
+.app-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: var(--fox-bright);
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 500;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    cursor: pointer;
+    transition: 1s;
+}
+
+.top-btns {
+    background-color: var(--silver);
+    color: var(--text-alter);
+}
+
+.side-btns {
+    background-color: var(--orange);
+}
+
+.zero-btn {
+    grid-column: span 2 / span 2;
+    width: auto;
+}
+
+.footer {
+    background-color: var(--fox-bright);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+}
+
+.about {
+    position: relative;
+    font-size: medium;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-alter);
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 75%;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.about:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}

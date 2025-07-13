@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>FoxCalc</title>
+</head>
+<body>
+    <div class="app">
+        <div class="background">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+            <div class="blur-overlay"></div>
+        </div>
+
+        <div class="calculator-body">
+            <div class="header">
+                <div class="app-logo">🦊 FoxCalc</div>
+                <div class="header-buttons">
+                    <div id="app-theme" class="app-theme">☀️</div>
+                    <div id="app-color" class="app-color">🎨</div>
+                    <div id="app-settings" class="app-settings">⚙️</div>
+                </div>
+            </div>
+            <div class="app-screen">
+                <p id="pre-screen">-</p>
+                <input id="main-screen" 
+                        type="text" 
+                        placeholder="0" 
+                        maxlength="8"
+                        autofocus
+                        autocomplete="off">
+                <p id="small-screen">*</p>
+            </div>
+
+            <div class="app-buttons">
+                <div data-key="ac" class="btn top-btns">
+                    <span>AC</span>
+                </div>
+
+                <div data-key="+-" class="btn top-btns">
+                    <span>±</span>
+                </div>
+                
+                <div data-key="%" class="btn top-btns">
+                    <span>%</span>
+                </div>
+                
+                <div data-key="/" class="btn side-btns">
+                    <span>÷</span>
+                </div>
+
+                <div data-key="7" class="btn">
+                    <span>7</span>
+                </div>
+
+                <div data-key="8" class="btn">
+                    <span>8</span>
+                </div>
+
+                <div data-key="9" class="btn">
+                    <span>9</span>
+                </div>
+
+                <div data-key="*" class="btn side-btns">
+                    <span>×</span>
+                </div>
+
+                <div data-key="4" class="btn">
+                    <span>4</span>
+                </div>
+
+                <div data-key="5" class="btn">
+                    <span>5</span>
+                </div>
+
+                <div data-key="6" class="btn">
+                    <span>6</span>
+                </div>
+
+                <div data-key="-" class="btn side-btns">
+                    <span>-</span>
+                </div>
+
+                <div data-key="1" class="btn">
+                    <span>1</span>
+                </div>
+
+                <div data-key="2" class="btn">
+                    <span>2</span>
+                </div>
+
+                <div data-key="3" class="btn">
+                    <span>3</span>
+                </div>
+
+                <div data-key="+" class="btn side-btns">
+                    <span>+</span>
+                </div>
+
+                <div data-key="0" class="btn zero-btn">
+                    <span>0</span>
+                </div>
+
+                <div data-key="." class="btn">
+                    <span>.</span>
+                </div>
+
+                <div data-key="=" class="btn side-btns">
+                    <span>=</span>
+                </div>
+            </div>
+
+            <div class="footer">
+                <a class="about" href="https://whitefox-lab.github.io/portfolio/">🦊 by whitefox ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" ></script>
+</body>
+</html>
