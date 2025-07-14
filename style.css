@@ -10,8 +10,12 @@
     --jet-black: #1a1a1a;
 
     --bg-color: #1e1e1e;
-    --text-main: white;
-    --text-alter: black;
+
+    --button-text-main: #1a1a1a;
+    --button-text-alter: #fdfdfd;
+    --button-bg-main: #3d3d3d;
+    --button-bg-top: #d4d4d2;
+    --button-bg-right: #ff9500;
 }
 
 * {
@@ -22,34 +26,38 @@
 
 body[data-theme="light"] {
     --bg-color: white;
-    --text-main: black;
+    --text-main: #1c1c1c;
     --text-alter: white;
     
     --calc-bg: #2b2b2b;
-    --button-bg: #444;
-    --button-text: #fdfdfd;
+    --button-text-main: #fdfdfd;
+    --button-text-alter: #1a1a1a;
+    --button-bg-main: #fdfdfd;
+    --button-bg-top: #3d3d3d;
+    --button-bg-right: #ff9500;
 }
 
 body {
-    background-color: var(--bg-color);
     color: var(--text-main);
     margin: 0;
     padding: 0;
-    transition: 1s;
+}
+
+.anim-smooth {
+    transition: background-color 1s ease, color 1s ease;
 }
 
 .app {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 1s;
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +65,10 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
+    background-color: var(--bg-color);
     z-index: 2;
     overflow: hidden;
+    transition: background-color 1s ease;
 }
 
 .circle1 {
@@ -155,7 +165,7 @@ body {
 
 .app-logo {
     padding-left: 4px;
-    transition: 1s;
+    transition: background-color 1s ease, color 1s ease;
 }
 
 .header-buttons {
@@ -165,11 +175,19 @@ body {
     cursor: pointer;
 }
 
-.app-theme, .app-color, .app-settings {
+.header-buttons span {
+    padding-top: 1px;
+}
+
+.app-theme {
+    padding-top: 1px;
+}
+
+.app-theme, .app-settings {
     background-color: var(--dark-gray);
     border-radius: 50%;
     display: flex;
-    align-items: center;
+    align-content: center;
     justify-content: center;
     height: 26px;
     width: 26px;
@@ -209,6 +227,7 @@ body {
     border: none;
     text-align: right;
     background-color: transparent;
+    cursor: default;
     width: 100%;
 }
 
@@ -235,8 +254,10 @@ body {
 }
 
 .btn {
-    background-color: var(--fox-bright);
+    color: var(--button-text-alter);
+    background-color: var(--button-bg-main);
     border-radius: 30px;
+    border: none;
     height: 60px;
     width: 60px;
     display: flex;
@@ -248,16 +269,30 @@ body {
     -ms-user-select: none; 
     user-select: none; 
     cursor: pointer;
-    transition: 1s;
+    transition: color 1s ease, background-color 1s ease;
+}
+
+.btn:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+    transition: 0.05s;
+}
+
+.btn:hover {
+    -webkit-box-shadow:0px 0px 4px 2px rgba(255,125,0,0.9);
+    -moz-box-shadow: 0px 0px 4px 2px rgba(255,125,0,0.9);
+    box-shadow: 0px 0px 4px 2px rgba(255,125,0,0.9);
+    transition: 0.25s ease;
 }
 
 .top-btns {
-    background-color: var(--silver);
-    color: var(--text-alter);
+    color: var(--button-text-main);
+    background-color: var(--button-bg-top);
 }
 
 .side-btns {
-    background-color: var(--orange);
+    color: var(--button-text-alter);
+    background-color: var(--button-bg-right);
 }
 
 .zero-btn {
@@ -279,6 +314,10 @@ body {
     font-weight: 600;
     text-decoration: none;
     color: var(--text-alter);
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    transition: color 1s ease;
 }
 
 .about::after {
