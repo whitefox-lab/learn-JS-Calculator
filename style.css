@@ -183,6 +183,11 @@ body {
     padding-top: 1px;
 }
 
+.app-settings {
+    position: relative;
+    display: inline-block;
+}
+
 .app-theme, .app-settings {
     background-color: var(--dark-gray);
     border-radius: 50%;
@@ -191,6 +196,43 @@ body {
     justify-content: center;
     height: 26px;
     width: 26px;
+}
+
+.popup-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    color: var(--button-text-alter);
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 150;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.popup-menu.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+}
+
+.popup-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.popup-menu li {
+    text-align: center;
+    text-wrap: nowrap;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.popup-menu li:hover {
+    background-color: var(--button-bg-main);
 }
 
 .app-screen {
