@@ -173,7 +173,11 @@ function calculate(){
   } else if (advancedDisplay.textContent === '×') {
     display.value = numA * numB;
   } else if (advancedDisplay.textContent === '÷') {
-    display.value = numB / numA;
+    if (Number.isFinite(numB / numA)) {
+      display.value = numB / numA;
+    } else {
+      display.value = 'error /0';
+    }
   }
 
   intermidiateOperation = true;
@@ -197,7 +201,7 @@ const buttonPlus = document.getElementById('btnPlus');
 const buttonMinus = document.getElementById('btnMinus');
 const buttonMultiply = document.getElementById('btnMultiply');
 const buttonDivision = document.getElementById('btnDivision');
-const buttonAC = document.getElementById('btnClearDisplay');
+const btnClearDisplay = document.getElementById('btnClearDisplay');
 
 document.addEventListener('keydown', (event) => {
     if (event.key === '0') {
@@ -238,6 +242,7 @@ document.addEventListener('keydown', (event) => {
   }
 )
 
+/* Special events */
 
 window.addEventListener("load", () => {
   const preloader = document.getElementById('preloader');
