@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Montserrat:wght@100..900&display=swap');
 
 :root {
+    /* my colors */
     --fox-bright: #ff6900;
-    --orange: #ffbb00;
     --dark-gray: #3d3d3d;
-    --fox-gray: #7e7e82;
     --display: #0096ff;
     --silver: #d0d3d4;
     --jet-black: #1a1a1a;
 
+    --text-main: white;
+    --text-alter: #1c1c1c;
     --bg-color: #1e1e1e;
-
     --button-text-main: #1a1a1a;
     --button-text-alter: #fdfdfd;
     --button-bg-main: #3d3d3d;
@@ -25,10 +25,9 @@
 }
 
 body[data-theme="light"] {
-    --bg-color: white;
     --text-main: #1c1c1c;
     --text-alter: white;
-    
+    --bg-color: white;
     --calc-bg: #2b2b2b;
     --button-text-main: #fdfdfd;
     --button-text-alter: #1a1a1a;
