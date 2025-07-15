@@ -14,7 +14,11 @@
     <title>FoxCalc</title>
 </head>
 <body>
-    <div class="app">
+    <div id="preloader">
+        <img src="/assets/fox-spinner.gif" alt="Fox spinner" width="200" height="200">
+    </div>
+
+    <div id="app" class="app">
         <div class="background">
             <div class="circle1"></div>
             <div class="circle2"></div>
@@ -33,7 +37,6 @@
                         <div id="popup-menu" class="popup-menu hidden">
                             <ul>
                                 <li id="dotOrCommaPopup"> " . " -> " , " </li>
-                                <li>Меню 2</li>
                             </ul>
                         </div>
                     </div>
@@ -76,7 +79,7 @@
             </div>
         </div>
     </div>
-
+    
     <script src="script.js" ></script>
 </body>
 </html>

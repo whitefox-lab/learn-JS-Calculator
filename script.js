@@ -239,3 +239,12 @@ document.addEventListener('keydown', (event) => {
 )
 
 
+window.addEventListener("load", () => {
+  const preloader = document.getElementById('preloader');
+  const content = document.getElementById('app');
+  content.style.display = "flex";
+  preloader.style.opacity = "0";
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 500);
+});
